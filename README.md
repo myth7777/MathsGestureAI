@@ -1,46 +1,33 @@
-MathsGestureAI
-MathsGestureAI is a cutting-edge application designed to interpret hand gestures and solve mathematical problems in real-time. This project combines computer vision, AI, and interactive UI elements to create an intuitive experience where users can draw mathematical expressions in the air and instantly receive solutions.
+# Math Gesture AI
 
-Project Overview
-MathsGestureAI aims to make math problem-solving more interactive and accessible by using hand gestures as input. The application captures hand movements through a webcam, processes the gestures to recognize mathematical symbols, and then uses AI to solve the problem. The result is displayed in a user-friendly interface.
+## Overview
 
-Features
-1. Real-Time Hand Gesture Detection
-Tool: OpenCV, cvzone
-Functionality: The application captures real-time video feed from a webcam and uses the HandDetector class from cvzone to detect hand landmarks. It can track up to one hand at a time with high accuracy, ensuring smooth interaction.
-2. Gesture-Based Drawing
-Tool: OpenCV, NumPy
-Functionality: Users can draw mathematical symbols and expressions in the air using their index finger. The application interprets these gestures and renders them onto a virtual canvas.
-3. AI-Powered Problem Solving
-Tool: Google Generative AI
-Functionality: Once a mathematical expression is drawn, it can be sent to the AI model, which interprets the drawing and provides the solution. The integration with Google Generative AI ensures accurate and reliable problem-solving capabilities.
-4. Interactive User Interface
-Tool: Streamlit
-Functionality: The application features an interactive and responsive UI, where users can start or stop the hand gesture detection, view the live feed, and see the AI-generated solutions. Streamlit makes the interface intuitive and easy to use.
-Tools and Libraries
-OpenCV: For capturing video feed and processing images.
-cvzone: Simplifies the implementation of hand tracking and gesture recognition.
-Google Generative AI: Provides AI-based interpretation and solution generation for mathematical problems.
-Streamlit: Used for creating an interactive web-based interface.
-PIL (Pillow): For handling image conversions when interacting with the AI model.
-NumPy: Used for efficient image and data processing.
-How It Works
-Webcam Initialization:
+**Math Gesture AI** is an AI-powered application that recognizes hand gestures and interprets them into mathematical operations. The project leverages TensorFlow and OpenCV to detect hand gestures in real-time and translates them into actions such as addition, subtraction, multiplication, and division.
 
-The application initializes the webcam to capture real-time video feed.
-The frame is processed to detect hand gestures.
-Hand Detection and Tracking:
+## Features
 
-The HandDetector class from cvzone is used to detect the position and movement of the hand.
-Specific gestures, such as holding up a finger or swiping, are recognized and used for different functionalities like drawing or erasing.
-Drawing on Canvas:
+- **Real-time Hand Gesture Recognition**: Uses TensorFlow models to identify and classify hand gestures.
+- **AI-Powered Problem Solving**: Integrates Google Generative AI (Gemini Model) to solve mathematical problems based on recognized gestures.
+- **User-Friendly Interface**: An intuitive interface for interacting with the AI system.
+- **Cross-Platform Compatibility**: Works on multiple platforms including Windows, macOS, and Linux.
 
-The application allows users to draw on a virtual canvas by moving their fingers in the air.
-The drawn expression is dynamically updated and displayed on the interface.
-AI Interpretation and Solution:
+### Prerequisites
 
-Once the expression is complete, it can be sent to the Google Generative AI model.
-The AI interprets the drawing, solves the problem, and returns the result, which is then displayed on the interface.
-User Interaction:
+- Python 3.8+
+- TensorFlow 2.x
+- OpenCV 4.x
+- Streamlit 1.x
+- Google Generative AI API Key
 
-Streamlit provides an easy-to-use interface where users can control the application, view the live feed, and read the AI-generated solution.
+## Gesture Guide
+- Draw Gesture: Show the "Index Finger" (fingers = [0, 1, 0, 0, 0]) to draw.
+- Erase Gesture: Show the "Thumb" (fingers = [1, 0, 0, 0, 0]) to erase the canvas.
+- Solve Gesture: Show the "Four Fingers Up" (fingers = [1, 1, 1, 1, 0]) to send the drawing to the AI for problem-solving.
+
+The system will display the recognized operation on the screen and provide an AI-generated answer to the problem.
+## Project Structure
+main.py: The entry point for running the application.
+models/: Contains pre-trained models used for gesture recognition.
+utils/: Utility scripts for processing images and managing the dataset.
+README.md: Project documentation.
+requirements.txt: List of dependencies required to run the project.
