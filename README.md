@@ -25,9 +25,3 @@
 - Solve Gesture: Show the "Four Fingers Up" (fingers = [1, 1, 1, 1, 0]) to send the drawing to the AI for problem-solving.
 
 The system will display the recognized operation on the screen and provide an AI-generated answer to the problem.
-## Project Structure
-main.py: The entry point for running the application.
-models/: Contains pre-trained models used for gesture recognition.
-utils/: Utility scripts for processing images and managing the dataset.
-README.md: Project documentation.
-requirements.txt: List of dependencies required to run the project.
